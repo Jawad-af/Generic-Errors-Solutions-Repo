@@ -1,0 +1,44 @@
+ -------------------
+| Error Description |
+ -------------------
+
+The contributions were not getting updated and added to the contribution graph in the remote repository.
+
+ ----------------
+| Error Solution |
+ ----------------
+
+The connected email was not connected with the remote repository.
+
+we check it by excuting the command:
+
+in: git config --global user.email
+
+the output was: =
+
+
+I tried to replace the connected emails firstly by running the command 
+
+git config --global --replace-all user.email "the_email"
+
+** this also did not work
+
+
+THE FINAL SOLUTION WAS:
+
+git config --global --add user.email "the_email"
+
+after excution the command: 
+git config --global user.email
+
+the output was: the_email
+
+
+ -----------------
+| Error Resources |
+ -----------------
+
+
+https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-on-github
+
+https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile
