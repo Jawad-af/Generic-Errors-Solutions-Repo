@@ -1,0 +1,48 @@
+ -------------------
+| Error Description |
+ -------------------
+
+AUTHENTICATION FAILED
+Cannot push or clone a github repo using the username and the password of the account.
+
+ ----------------
+| Error Solution |
+ ----------------
+
+**First make sure to create a classical token inside the github repo.**
+
+Go to your account 
+-> from the drop down menu go to settings 
+-> on the bottom down on the left side bar you will find Developer settings or something 
+-> choose Classical Token 
+-> select all the options and add the token.
+
+
+**Edit the git global configuration if needed**
+
+check if the global configuration are set to you username and email
+
+git config --global user.name
+git config --global user.email
+
+if you cannot see anything OR you want to change the username or the email type in the command line 
+
+git config --global --edit 
+
+this will open a text editor that contains the global configuration file (.gitconfig)
+edit them - save chagnes - exit
+
+**Add the token instead of the password**
+
+when you try to clone or push to the repo, github will ask you for the username and the password..
+Add the token we generate previously instead of the passowrd of the account.
+And it should work with no problems.
+
+
+#Two types of errors I faced
+
+1. The repository cannot be found
+That happens in case you are not logged in with your personal credentials e.g. the global configurations are set to different username and email
+
+2. The Authentication error 
+Which we solved in this doc earlier.
